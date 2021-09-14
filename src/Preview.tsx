@@ -34,7 +34,7 @@ const Preview = () => {
           lineHeight={" %"}
           id={"mint"}
         >
-          Letter Letter Letter
+          Solana Letters
         </Heading>
         <Text fontSize={{ md: "xl" }}>
           1,198 unique Solana NFTs. Each is a unique 3 letter word with a custom
