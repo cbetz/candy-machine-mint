@@ -17,7 +17,10 @@ import {
   WalletProvider,
 } from "@solana/wallet-adapter-react";
 
-import { WalletDialogProvider } from "@solana/wallet-adapter-material-ui";
+//import { WalletDialogProvider } from "@solana/wallet-adapter-material-ui";
+import Preview from "./Preview";
+import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
+import { ChakraProvider } from "@chakra-ui/react"
 
 const treasury = new anchor.web3.PublicKey(
   process.env.REACT_APP_TREASURY_ADDRESS!
@@ -51,16 +54,19 @@ const App = () => {
   return (
     <ConnectionProvider endpoint={endpoint}>
       <WalletProvider wallets={wallets} autoConnect>
-        <WalletDialogProvider>
-          <Home
+        <WalletModalProvider>
+          <ChakraProvider resetCSS>
+          {/*<Home
             candyMachineId={candyMachineId}
             config={config}
             connection={connection}
             startDate={startDateSeed}
             treasury={treasury}
             txTimeout={txTimeout}
-          />
-        </WalletDialogProvider>
+          />*/}
+          <Preview />
+          </ChakraProvider>
+        </WalletModalProvider>
       </WalletProvider>
     </ConnectionProvider>
   );

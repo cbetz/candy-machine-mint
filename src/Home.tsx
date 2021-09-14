@@ -1,15 +1,12 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Countdown from "react-countdown";
-import { Button, CircularProgress, Snackbar } from "@material-ui/core";
-import Alert from "@material-ui/lab/Alert";
 
 import * as anchor from "@project-serum/anchor";
 
 import { LAMPORTS_PER_SOL } from "@solana/web3.js";
 
 import { useWallet } from "@solana/wallet-adapter-react";
-import { WalletDialogButton } from "@solana/wallet-adapter-material-ui";
 
 import {
   CandyMachine,
@@ -18,8 +15,10 @@ import {
   mintOneToken,
   shortenAddress,
 } from "./candy-machine";
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+import { Button, Text } from "@chakra-ui/react";
 
-const ConnectButton = styled(WalletDialogButton)``;
+const ConnectButton = styled(WalletMultiButton)``;
 
 const CounterText = styled.span``; // add your styles here
 
@@ -181,7 +180,7 @@ const Home = (props: HomeProps) => {
               "SOLD OUT"
             ) : isActive ? (
               isMinting ? (
-                <CircularProgress />
+                <Text>Minting...</Text>
               ) : (
                 "MINT"
               )
@@ -197,7 +196,7 @@ const Home = (props: HomeProps) => {
         )}
       </MintContainer>
 
-      <Snackbar
+      {/*<Snackbar
         open={alertState.open}
         autoHideDuration={6000}
         onClose={() => setAlertState({ ...alertState, open: false })}
@@ -208,7 +207,7 @@ const Home = (props: HomeProps) => {
         >
           {alertState.message}
         </Alert>
-      </Snackbar>
+      </Snackbar>*/}
     </main>
   );
 };
