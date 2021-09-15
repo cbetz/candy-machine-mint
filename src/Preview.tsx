@@ -11,9 +11,9 @@ import {
   ListIcon,
   Center,
 } from "@chakra-ui/react";
-//import { DarkModeSwitch } from "../components/DarkModeSwitch";
 import React from "react";
 import { TimeIcon } from "@chakra-ui/icons";
+import { DarkModeSwitch } from "./DarkModeSwitch";
 
 const Preview = () => {
   return (
@@ -110,7 +110,7 @@ const Preview = () => {
         </List>
       </Stack>
 
-      {/*<DarkModeSwitch />*/}
+      <DarkModeSwitch />
     </Container>
   );
 };
