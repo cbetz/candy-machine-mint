@@ -108,6 +108,10 @@ const Preview = () => {
             Combine your word with other words to create new word and sentence NFTs.
           </ListItem>
         </List>
+
+        <Center>
+          <Image src="/word-search.gif" align="center" />
+        </Center>
       </Stack>
 
       <DarkModeSwitch />
