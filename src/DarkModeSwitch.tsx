@@ -1,4 +1,5 @@
-import { useColorMode, Switch, IconButton } from "@chakra-ui/react";
+/* eslint-disable eqeqeq */
+import { useColorMode, IconButton } from "@chakra-ui/react";
 import React from "react";
 import { IoMoon, IoSunny } from "react-icons/io5";
 
