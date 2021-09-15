@@ -58,7 +58,7 @@ export default function Nav() {
             fontFamily={"heading"}
             color={useColorModeValue("gray.800", "white")}
           >
-            Letters
+            Solana Letters
           </Text>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
