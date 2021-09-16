@@ -12,6 +12,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { DarkModeSwitch } from "./DarkModeSwitch";
+import Footer from "./Footer";
 import Roadmap from "./Roadmap";
 
 export default function CallToActionWithVideo() {
@@ -111,6 +112,7 @@ export default function CallToActionWithVideo() {
       <div id={"roadmap"}></div>
       <Roadmap />
       <DarkModeSwitch />
+      <Footer />
     </Container>
   );
 }
