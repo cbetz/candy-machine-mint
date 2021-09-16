@@ -23,6 +23,7 @@ import Preview from "./Preview";
 import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 import { ChakraProvider } from "@chakra-ui/react"
 import Nav from "./Nav";
+import Preview2 from "./Preview2";
 
 const treasury = new anchor.web3.PublicKey(
   process.env.REACT_APP_TREASURY_ADDRESS!
@@ -67,7 +68,7 @@ const App = () => {
             txTimeout={txTimeout}
           />*/}
           <Nav />
-          <Preview />
+          <Preview2 />
           </ChakraProvider>
         </WalletModalProvider>
       </WalletProvider>
