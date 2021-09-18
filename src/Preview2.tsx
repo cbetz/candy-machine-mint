@@ -11,13 +11,32 @@ import {
   IconProps,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { createRef, useEffect } from "react";
 import { DarkModeSwitch } from "./DarkModeSwitch";
 import Footer from "./Footer";
 import Roadmap from "./Roadmap";
 
 export default function CallToActionWithVideo() {
+  const cursor = createRef<HTMLElement>();
+  const handleMouseMove = (event: any) => {
+    console.log(event);
+    const position = { x: event.clientX, y: event.clientY };
+    const element = document.getElementById("cursor");
+    console.log(element);
+    if (element) {
+      element.style.transform = `translate3d(${position.x}px, ${position.y}px, 0)`;
+      if (cursor.current) {
+        cursor.current.style.transform = `translate3d(${position.x}px, ${position.y}px, 0)`;
+      }
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousemove", handleMouseMove);
+  }, []);
+
   return (
-    <Container maxW={"7xl"}>
+    <Container maxW={"7xl"} onMouseMove={(event) => handleMouseMove(event)}>
       <Stack
         align={"center"}
         spacing={{ base: 8, md: 10 }}
@@ -113,6 +132,7 @@ export default function CallToActionWithVideo() {
       <Roadmap />
       <DarkModeSwitch />
       <Footer />
+      <Cursor />
     </Container>
   );
 }
@@ -133,5 +153,95 @@ export const Blob = (props: IconProps) => {
         fill="currentColor"
       />
     </Icon>
+  );
+};
+
+export const Cursor = () => {
+  return (
+    <div
+      id="cursor"
+      className="cursor"
+      style={{
+        transform:
+          "translate3d(487.28404017857144px, 159.96341463414635px, 0px)",
+        display: "flex",
+        position: "absolute",
+        fontFamily: "Inter, sans-serif",
+        fontSize: "11px",
+        lineHeight: "1em",
+        cursor: "pointer",
+        transition: "opacity 0.3s ease",
+        willChange: "transform",
+        overflow: "visible",
+      }}
+    >
+      <div>
+        <svg
+          width="33"
+          height="33"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g filter="url(#filter0_d)" opacity="1">
+            <path
+              d="M9.63 6.9a1 1 0 011.27-1.27l11.25 3.75a1 1 0 010 1.9l-4.68 1.56a1 1 0 00-.63.63l-1.56 4.68a1 1 0 01-1.9 0L9.63 6.9z"
+              fill="#ff0080"
+            ></path>
+            <path
+              d="M11.13 4.92a1.75 1.75 0 00-2.2 2.21l3.74 11.26a1.75 1.75 0 003.32 0l1.56-4.68a.25.25 0 01.16-.16L22.4 12a1.75 1.75 0 000-3.32L11.13 4.92z"
+              stroke="#fff"
+              strokeWidth="1.5"
+            ></path>
+          </g>
+          <defs>
+            <filter
+              id="filter0_d"
+              x=".08"
+              y=".08"
+              width="32.26"
+              height="32.26"
+              filterUnits="userSpaceOnUse"
+            >
+              <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+              <feColorMatrix
+                in="SourceAlpha"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+              ></feColorMatrix>
+              <feOffset dy="4"></feOffset>
+              <feGaussianBlur stdDeviation="4"></feGaussianBlur>
+              <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0"></feColorMatrix>
+              <feBlend
+                in2="BackgroundImageFix"
+                result="effect1_dropShadow"
+              ></feBlend>
+              <feBlend
+                in="SourceGraphic"
+                in2="effect1_dropShadow"
+                result="shape"
+              ></feBlend>
+            </filter>
+          </defs>
+        </svg>
+      </div>
+      <div className="user-info">
+        <div
+          className="message empty"
+          style={{ backgroundColor: "rgb(255, 0, 128)" }}
+        >
+          <img
+            src="https://avatars.githubusercontent.com/alexanderson1993?s=56"
+            className="avatar"
+            alt="avatar"
+            style={{ color: "rgb(255, 0, 128)" }}
+          />
+          <div
+            className="collaborator_content__3ADbj"
+            style={{ width: "0px", height: "0px" }}
+          >
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
