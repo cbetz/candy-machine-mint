@@ -11,6 +11,7 @@ import {
   IconProps,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import { DarkModeSwitch } from "./DarkModeSwitch";
 import Footer from "./Footer";
 import Roadmap from "./Roadmap";
@@ -61,17 +62,19 @@ export default function CallToActionWithVideo() {
             spacing={{ base: 4, sm: 6 }}
             direction={{ base: "column", sm: "row" }}
           >
-            <Button
-              rounded={"lg"}
-              size={"lg"}
-              fontWeight={"normal"}
-              px={6}
-              colorScheme={"blue"}
-              bg={"blue.400"}
-              _hover={{ bg: "blue.500" }}
-            >
-              Mint 9/23/2021 6PM UTC
-            </Button>
+            <Link to="/mint">
+              <Button
+                rounded={"lg"}
+                size={"lg"}
+                fontWeight={"normal"}
+                px={6}
+                colorScheme={"blue"}
+                bg={"blue.400"}
+                _hover={{ bg: "blue.500" }}
+              >
+                Mint 9/23/2021 6PM UTC
+              </Button>
+            </Link>
           </Stack>
         </Stack>
         <Flex

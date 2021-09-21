@@ -21,6 +21,8 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 
+import { Link as RouterLink} from "react-router-dom";
+
 export default function Nav() {
   const { isOpen, onToggle } = useDisclosure();
 
@@ -57,7 +59,7 @@ export default function Nav() {
             fontFamily={"heading"}
             color={useColorModeValue("gray.800", "white")}
           >
-            Solana Letters
+            <RouterLink to="/">Solana Letters</RouterLink>
           </Text>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
@@ -236,7 +238,7 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: "Mint",
-    href: "#mint",
+    href: "/mint",
   },
   {
     label: "Roadmap",

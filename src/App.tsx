@@ -70,7 +70,8 @@ const App = () => {
           />*/}
             <Router>
               <Switch>
-                <Route path="/test">
+                <Route path="/mint">
+                  <Nav />
                   <Home
                     candyMachineId={candyMachineId}
                     config={config}
