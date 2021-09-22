@@ -345,7 +345,7 @@ const Home = (props: HomeProps) => {
 const renderCounter = ({ days, hours, minutes, seconds, completed }: any) => {
   return (
     <CounterText>
-      {hours} hours, {minutes} minutes, {seconds} seconds
+      {days} day, {hours} hours, {minutes} minutes, {seconds} seconds
     </CounterText>
   );
 };
