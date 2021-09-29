@@ -65,7 +65,7 @@ const Preview = () => {
               bg: "blue.500",
             }}
           >
-            Mint 9/23/2021 6PM UTC
+            Mint
           </Button>
         </Stack>
 

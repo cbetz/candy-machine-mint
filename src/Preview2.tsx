@@ -72,7 +72,7 @@ export default function CallToActionWithVideo() {
                 bg={"blue.400"}
                 _hover={{ bg: "blue.500" }}
               >
-                Mint 9/23/2021 6PM UTC
+                Mint
               </Button>
             </Link>
           </Stack>
