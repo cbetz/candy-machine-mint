@@ -72,7 +72,7 @@ export default function CallToActionWithVideo() {
                 bg={"blue.400"}
                 _hover={{ bg: "blue.500" }}
               >
-                Mint
+                Mint for 0.25 SOL
               </Button>
             </Link>
           </Stack>

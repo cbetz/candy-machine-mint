@@ -286,7 +286,7 @@ const Home = (props: HomeProps) => {
                   isMinting ? (
                     <Text>Minting...</Text>
                   ) : (
-                    "MINT"
+                    "Mint for 0.25 SOL"
                   )
                 ) : (
                   <Countdown
