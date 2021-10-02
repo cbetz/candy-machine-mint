@@ -10,6 +10,7 @@ import {
   Icon,
   IconProps,
   useColorModeValue,
+  Link as ChakraLink,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { DarkModeSwitch } from "./DarkModeSwitch";
@@ -75,6 +76,19 @@ export default function CallToActionWithVideo() {
                 Mint for 0.25 SOL
               </Button>
             </Link>
+            <ChakraLink href="https://app.solanaletters.com" target="_blank">
+            <Button
+                rounded={"lg"}
+                size={"lg"}
+                fontWeight={"normal"}
+                px={6}
+                colorScheme={"blue"}
+                bg={"blue.400"}
+                _hover={{ bg: "blue.500" }}
+              >
+                Play Now
+              </Button>
+            </ChakraLink>
           </Stack>
         </Stack>
         <Flex
